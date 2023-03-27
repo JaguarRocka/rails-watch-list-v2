@@ -1,16 +1,21 @@
-<div class="container">
-<h1>Hello mon petit pote</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
-
-
-<% @lists.each do |list|%>
-  <%= list.name %>
-  <%= link_to "Voir le contenu de la liste", list_path(list) %>
-<% end %>
-
-
-
-<div class="text-center">
-<%= link_to "Créer une nouvelle liste",  new_list_path %>
+<div class="home-banner">
+  <h1 id="home-title">Save any kind of movies</h1>
 </div>
+
+<div class="container">
+    <%= link_to "Créer une nouvelle liste",  new_list_path, class: "btn btn-primary my-2" %>
+
+  <div class="row">
+    <% @lists.each do |list|%>
+
+        <div class="col-sm-6">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+             <h2 class="card-title"><%= list.name %></h2>
+              <%= link_to "See more", list_path(list), class: "card-link link-see-more" %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

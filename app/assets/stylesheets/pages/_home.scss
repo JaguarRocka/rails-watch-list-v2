@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+
+.home-banner{
+  display: flex;
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(https://images.unsplash.com/photo-1577382144834-8a80d92b925c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3174&q=80);
+}
+
+#home-title{
+  margin: auto;
+  font-size: 3rem;
+  font-weight: 800;
+  color: whitesmoke;
+  text-shadow: 1px 0px 1px #ede0e080;
+}
+
+.link-add-list{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.link-see-more{
+  text-decoration: none;
+}
