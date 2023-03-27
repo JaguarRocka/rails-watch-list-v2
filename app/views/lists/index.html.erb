@@ -1,0 +1,16 @@
+<div class="container">
+<h1>Hello mon petit pote</h1>
+<p>Find me in app/views/lists/index.html.erb</p>
+
+
+<% @lists.each do |list|%>
+  <%= list.name %>
+  <%= link_to "Voir le contenu de la liste", list_path(list) %>
+<% end %>
+
+
+
+<div class="text-center">
+<%= link_to "Créer une nouvelle liste",  new_list_path %>
+</div>
+</div>
