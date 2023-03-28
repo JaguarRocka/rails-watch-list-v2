@@ -1,0 +1,33 @@
+.show-banner{
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  h1{
+    color: whitesmoke;
+    margin: auto;
+    font-weight: bold;
+  }
+  h5 {
+    margin: auto;
+    color: whitesmoke;
+    background-color: red;
+    border-radius: 5%;
+  }
+}
+
+.count-movies{
+  padding: 5px 15px;
+  background-color: orange;
+  color: black;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.empty-section{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}

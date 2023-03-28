@@ -1,8 +1,12 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
-
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :image_url, input_html: { type: "url" }  %>
-  <%= f.submit %>
-<% end %>
+<div class="home-banner">
+  <h1 id="home-title">Save any kind of movies</h1>
+</div>
+<div class="container mt-5">
+<h3>New List :</h3>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :comment %>
+    <%= f.input :image_url, input_html: { type: "url" }  %>
+    <%= f.submit %>
+  <% end %>
+</div>

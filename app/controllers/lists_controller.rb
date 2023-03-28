@@ -38,11 +38,17 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
+    redirect_to lists_path
   end
+
+  # def count_movies(list)
+  #   movies = list.bookmarks
+  #   puts movies.length
+  # end
 
   private
 
   def list_params
-    params.require(:list).permit(:name, :image_url)
+    params.require(:list).permit(:name, :image_url, :comment)
   end
 end

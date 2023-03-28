@@ -12,6 +12,7 @@ url = "https://tmdb.lewagon.com/movie/top_rated?api_key=%3Cyour_api_ke 'original
 url_serialized = URI.open("#{url}").read
 movies = JSON.parse(url_serialized)
 
+p movies
 movies['results'].each do |movie|
   base_poster_url = "https://image.tmdb.org/t/p/original"
   Movie.create(
