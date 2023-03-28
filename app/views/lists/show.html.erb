@@ -1,8 +1,16 @@
-<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @list.image_url %>');">
-    <h1><%= @list.name %></h1>
-    <h5><%= @list.comment%></h5>
-    <p class="count-movies"><%= @list.bookmarks.length %> movies</p>
-</div>
+<% if @list.image_url.present? %>
+  <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @list.image_url %>');">
+      <h1><%= @list.name %></h1>
+      <h5><%= @list.comment%></h5>
+      <p class="count-movies"><%= @list.bookmarks.length %> movies</p>
+  </div>
+<% else %>
+  <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @list.image%>');">
+      <h1><%= @list.name %></h1>
+      <h5><%= @list.comment%></h5>
+      <p class="count-movies"><%= @list.bookmarks.length %> movies</p>
+  </div>
+<% end %>
 <div class="container mt-2 mb-5">
 <h3>My movies :</h3>
 

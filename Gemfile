@@ -5,8 +5,10 @@ ruby "3.1.2"
 
 gem 'open-uri'
 
+gem "cloudinary"
+
 gem "dotenv-rails", groups: [:development, :test]
- 
+
 gem 'bootstrap', '~> 5.2.2'
 
 gem "autoprefixer-rails"

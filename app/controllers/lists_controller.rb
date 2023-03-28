@@ -1,3 +1,5 @@
+require 'cloudinary'
+
 class ListsController < ApplicationController
   def new
     @list = List.new
@@ -5,7 +7,11 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-
+    image = params[:list][:photo]
+    if image.present?
+      cloudinary_url = Cloudinary::Uploader.upload(image)
+      @list.image = cloudinary_url["secure_url"]
+    end
     if @list.save
       redirect_to list_path(@list)
     else
@@ -28,6 +34,11 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
+    image = params[:list][:photo]
+    if image.present?
+      cloudinary_url = Cloudinary::Uploader.upload(image)
+      @list.image = cloudinary_url["secure_url"]
+    end
     if @list.update(list_params)
       redirect_to @list, notice: 'Merci pour vos modifications'
     else
@@ -49,6 +60,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :image_url, :comment)
+    params.require(:list).permit(:name, :image_url, :comment, :photo)
   end
 end

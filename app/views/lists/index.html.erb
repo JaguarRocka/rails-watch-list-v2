@@ -11,7 +11,11 @@
     <div class="parent">
       <div class="card-grid">
         <% @lists.each do |list|%>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.image_url %>');">
+          <% if list.image_url.present? %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.image_url %>');">
+          <% else %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.image %>');">
+          <% end %>
             <%= link_to list_path(list) do %>
               <h2 class="card-title"><%= list.name %></h2>
             <% end %>
