@@ -3,5 +3,6 @@
 
 <%= simple_form_for(@list) do |f| %>
   <%= f.input :name %>
+  <%= f.input :image_url, input_html: { type: "url" }  %>
   <%= f.submit %>
 <% end %>

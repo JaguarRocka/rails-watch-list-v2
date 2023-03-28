@@ -9,7 +9,7 @@ require 'json'
 require 'open-uri'
 
 url = "https://tmdb.lewagon.com/movie/top_rated?api_key=%3Cyour_api_ke 'original_title';y%3E"
-url_serialized = URI.open("#{url}?page=1").read
+url_serialized = URI.open("#{url}").read
 movies = JSON.parse(url_serialized)
 
 movies['results'].each do |movie|

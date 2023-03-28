@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>RailsWatchListV2</title>
+    <link rel="icon" type="image/png" src="app/assets/images/icons8-projecteur-de-film-48.png">
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +12,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="background-body">
+
     <%= yield %>
+
   </body>
 </html>
