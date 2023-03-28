@@ -29,6 +29,7 @@
                   <h2 class="card-title"><%= bookmark.movie.title %></h2>
                   <p class="card-text"><%= bookmark.movie.overview %></p>
                   <p class="card-text"><em>"<%= bookmark.comment %>"</em></p>
+                  <p class="card-text"><em><i class="fa-solid fa-star" style="color: #ffdd00;"></i> My note: <%= bookmark.rating %></em></p>
                   <p class="card-text"><i class="fa-solid fa-star" style="color: #ffdd00;"></i> <%= bookmark.movie.rating %></p>
                   <%= link_to "Delete this movie", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-warning"%>
                 </div>
